@@ -6,3 +6,5 @@ Exercise: id, name, muscle_group, instructions
 set_order tells us the full workout sequence so it can handle supersets without additional code.
 weight is optional as several exercises do not require weights.
 passwords always stored as hash.
+
+# TODO decide int vs GUID for ids before building.
