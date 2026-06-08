@@ -1,0 +1,10 @@
+# Build output - generate from source, never tracked
+bin/
+obj/
+
+# IDE clutter
+.vs/
+
+# Secrets - NEVER commit these
+appsettings.Development.json
+*.env
