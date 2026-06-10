@@ -4,7 +4,7 @@ Set: id, workout_id => Workout, exercise_id => Exercise, set_order, reps, weight
 Exercise: id, name, muscle_group, instructions
 
 set_order tells us the full workout sequence so it can handle supersets without additional code.
-weight is optional - bodyweight exercises need no weight.
+weight is optional for bodyweight movements.
 passwords always stored as hash.
 
 # TODO decide int vs GUID for ids before building.
