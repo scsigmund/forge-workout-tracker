@@ -10,3 +10,5 @@ passwords always stored as hash.
 # TODO decide int vs GUID for ids before building.
 
 # Branch test: editing on feature/about-section
+
+# Indexes to consider later for query performance
