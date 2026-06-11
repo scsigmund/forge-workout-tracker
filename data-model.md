@@ -12,3 +12,5 @@ passwords always stored as hash.
 # Branch test: editing on feature/about-section
 
 # Indexes to consider later for query performance
+
+# Decision: store all weights in kilograms only
