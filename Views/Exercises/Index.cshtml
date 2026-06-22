@@ -1,0 +1,21 @@
+@model IEnumerable<forge_workout_tracker.Models.Exercise>
+
+<h1>Exercises</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Muscle Group</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var exercise in Model)
+        {
+            <tr>
+                <td>@exercise.Name</td>
+                <td>@exercise.MuscleGroup</td>
+            </tr>
+        }
+    </tbody>
+</table>
