@@ -1,0 +1,16 @@
+@model forge_workout_tracker.Models.Exercise
+
+<h1>Edit Exercise</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <label asp-for="MuscleGroup"></label>
+        <input asp-for="MuscleGroup" />
+    </div>
+    <button type="submit">Save</button>
+</form>
