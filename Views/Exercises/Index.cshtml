@@ -7,6 +7,7 @@
         <tr>
             <th>Name</th>
             <th>Muscle Group</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -15,6 +16,12 @@
             <tr>
                 <td>@exercise.Name</td>
                 <td>@exercise.MuscleGroup</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@exercise.Id">Edit</a>
+                    <form asp-action="Delete" asp-route-id="@exercise.Id" method="post" style="display:inline">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
             </tr>
         }
     </tbody>

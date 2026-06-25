@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using forge_workout_tracker.Data;
 using forge_workout_tracker.Models;
+using AspNetCoreGeneratedDocument;
 
 namespace forge_workout_tracker.Controllers
 {
@@ -28,6 +29,31 @@ namespace forge_workout_tracker.Controllers
         public IActionResult Create(Exercise exercise)
         {
             _context.Exercises.Add(exercise);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Edit(int id)
+        {
+            var exercise = _context.Exercises.Find(id);
+            if (exercise == null) return NotFound();
+            return View(exercise);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Exercise exercise)
+        {
+            _context.Exercises.Update(exercise);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            var exercise = _context.Exercises.Find(id);
+            if (exercise == null) return NotFound();
+            _context.Exercises.Remove(exercise);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
