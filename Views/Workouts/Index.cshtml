@@ -1,0 +1,23 @@
+@model IEnumerable<forge_workout_tracker.Models.Workout>
+
+<h1>Workouts</h1>
+
+<a asp-action="Create">New Workout</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Started</th>
+            <th>Ended</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var workout in Model)
+        {
+            <tr>
+                <td>@workout.StartDateTime</td>
+                <td>@workout.EndDateTime</td>
+            </tr>
+        }
+    </tbody>
+</table>
