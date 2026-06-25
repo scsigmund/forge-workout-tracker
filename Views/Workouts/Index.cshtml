@@ -17,6 +17,7 @@
             <tr>
                 <td>@workout.StartDateTime</td>
                 <td>@workout.EndDateTime</td>
+                <td><a asp-action="Details" asp-route-id="@workout.Id">View</a></td>
             </tr>
         }
     </tbody>

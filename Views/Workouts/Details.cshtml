@@ -1,0 +1,22 @@
+@model forge_workout_tracker.Models.Workout
+
+<h1>Workout on @Model.StartDateTime</h1>
+
+<a asp-controller="Sets" asp-action="Create" asp-route-workoutId="@Model.Id">Log a Set</a>
+
+<table class="table">
+    <thead>
+        <tr><th>Order</th><th>Exercise</th><th>Reps</th><th>Weight</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var set in Model.Sets.OrderBy(s => s.SetOrder))
+        {
+            <tr>
+                <td>@set.SetOrder</td>
+                <td>@set.Exercise?.Name</td>
+                <td>@set.Reps</td>
+                <td>@set.Weight</td>
+            </tr>
+        }
+    </tbody>
+</table>

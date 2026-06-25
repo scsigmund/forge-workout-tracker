@@ -1,0 +1,24 @@
+@model forge_workout_tracker.Models.Set
+
+<h1>Log Set</h1>
+
+<form asp-action="Create" method="post">
+    <input type="hidden" name="WorkoutId" value="@ViewBag.WorkoutId" />
+    <div>
+        <label>Exercise</label>
+        <select asp-for="ExerciseId" asp-items="ViewBag.Exercises"></select>
+    </div>
+    <div>
+        <label asp-for="SetOrder"></label>
+        <input asp-for="SetOrder" />
+    </div>
+    <div>
+        <label asp-for="Reps"></label>
+        <input asp-for="Reps" />
+    </div>
+    <div>
+        <label asp-for="Weight"></label>
+        <input asp-for="Weight" />
+    </div>
+    <button type="submit">Save Set</button>
+</form>

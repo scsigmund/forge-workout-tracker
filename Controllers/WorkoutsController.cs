@@ -34,5 +34,16 @@ namespace forge_workout_tracker.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public IActionResult Details(int id)
+        {
+            var workout = _context.Workouts
+                .Include(w => w.Sets)
+                .ThenInclude(s => s.Exercise)
+                .FirstOrDefault(w => w.Id == id);
+
+            if (workout == null) return NotFound();
+            return View(workout);
+        }
     }
 }

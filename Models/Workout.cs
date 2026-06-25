@@ -9,5 +9,6 @@ namespace forge_workout_tracker.Models
 
         // Navigation properties
         public User? User{ get; set; }
+        public List<Set> Sets { get; set; } = new();
     }
 }
